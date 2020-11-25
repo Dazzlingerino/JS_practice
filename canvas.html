@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Canvas
+	</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="200" height="200" ></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillRect(20+10,0,50,50);     // head
+        ctx.fillRect(10+15,60,60,110);   // body
+        ctx.fillRect(40+10,30,10,30);    // neck
+        ctx.fillRect(0,60,112,10);       // arms
+        // ctx.fillRect(0,0,199,199);
+        ctx.fillStyle = "white";
+        ctx.fillRect(20+15,120,40,50);   // gap between legs
+    </script>
+</body>
+</html>
