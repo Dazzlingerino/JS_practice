@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>
+		viselitsa
+	</title>
+</head>
+
+<body>
+	<h1>Viselitsa</h1>
+	<script>
+		var words = [
+			"игра", "работа", "настроение", "картограф", "блиц", "годзила", "пингвин"];
+
+		// Choosing random word
+		function pickWord() {
+			return words[Math.floor(Math.random() * words.length)];
+		}
+		var word = pickWord();
+		console.log(word)
+		// Creating game array
+		
+			var answerArray = [];
+			for (var i = 0; i < word.length; i++) {
+				answerArray[i] = "_";
+			}
+		
+		
+		var remainingLetters = word.length;
+		var tries = word.length + 5;
+		// game cycle
+		while (remainingLetters > 0 && tries > 0) {
+			//Showing game status
+			alert(answerArray.join(" "));
+			
+			
+			// Asking for variant
+			function getGuess(){
+				var guess = prompt("Угадайте букву или нажмите 'отмена' для завершения игры");
+				return guess;
+			}
+			var guess = getGuess();
+			if (guess === null) {
+				break;
+			} else if (guess.length !== 1) {
+				alert("не тупи только 1 букву вводи!");
+			} else if (!word.includes(guess.toLowerCase())) {
+				alert("у тебя осталось " + tries + " жизней");
+				tries--;
+			} else {
+				for (var j = 0; j < word.length; j++) {
+					if (word[j] === guess.toLowerCase()) {
+						if (answerArray[j] === "_") {
+							answerArray[j] = guess.toLowerCase();
+							remainingLetters--;
+						}
+						else {
+							alert("баян, у тебя осталось " + tries + " жизней");
+							tries--;
+						}
+					}
+				}
+			}
+		}
+		if ((remainingLetters > 0 && tries === 0) || (guess === null)) {
+			alert("Ты не жилец, было загадано: " + `"${word}"`);
+		}
+		else {
+			alert(answerArray.join(" "));
+			alert("Молоток! было загадано: " + `"${word}"`);
+		}
+	</script>
+</body>
+
+</html>
