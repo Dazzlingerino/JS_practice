@@ -29,18 +29,20 @@
         // drawing dude for Viselitsa
         ctx.lineWidth = 3;
         ctx.strokeStyle = "#000";
-        ctx.strokeRect(10,300,20,20);       //head
+		ctx.beginPath();
+		ctx.arc(40,305,15,0, Math.PI*2, false);
+		ctx.stroke();      //head
         ctx.beginPath();
-        ctx.moveTo(20,320);
-        ctx.lineTo(20,345);       //body
-         ctx.moveTo(20,345);
-        ctx.lineTo(5,370);       // left leg
-         ctx.moveTo(20,345);
-        ctx.lineTo(35,370);       // right leg
-         ctx.moveTo(20,330);
-        ctx.lineTo(35,325);      // right arm
-         ctx.moveTo(20,330); 
-        ctx.lineTo(5,325);      // left arm
+        ctx.moveTo(40,320);
+        ctx.lineTo(40,345);       //body
+         ctx.moveTo(40,345);
+        ctx.lineTo(25,370);       // left leg
+         ctx.moveTo(40,345);
+        ctx.lineTo(55,370);       // right leg
+         ctx.moveTo(40,330);
+        ctx.lineTo(55,325);      // right arm
+         ctx.moveTo(40,330); 
+        ctx.lineTo(25,325);      // left arm
         ctx.stroke();
     </script>
 </body>
