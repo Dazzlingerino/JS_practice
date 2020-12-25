@@ -1,8 +1,11 @@
 .default-input {
-  border: green 5px solid;
-  padding: 5px;
+  border: green 3px solid;
+  padding: 8px;
+  margin: 2px;
 }
 
 .error-input {
-  border-color: red;
+  border: red 3px solid;
+  padding: 8px;
+  margin: 2px;
 }

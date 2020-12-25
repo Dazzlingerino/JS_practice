@@ -24,7 +24,7 @@ getEl(citiesId);
 let hobbiesId = 'hobbies';
 getEl(hobbiesId);
 
-// window.alert(firstNameEl.className)
+// window.alert(getEl(lastNameId))
 // window.alert(lastNameEl.className)
 // window.alert(citiesEl.value)
 // window.alert(addressNameEl.className)
