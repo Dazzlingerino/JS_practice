@@ -26,3 +26,13 @@
   padding: 20px;
   border-bottom: 1px solid black;
 }
+
+.MyCalculator .inputs-block .output-block #result-field {
+  border: 1px solid black;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  width: auto;
+  height: 18px;
+  background-color: white;
+}
