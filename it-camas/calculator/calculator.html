@@ -11,23 +11,48 @@
 <body>
     <div class='MyCalculator'>
         <div class='operations-block'>
-            <button id='buttonPlus'>+</button>
-            <button id='buttonMinus'>-</button>
-            <button id='buttonMultiply'>*</button>
-            <button id='buttonDivide'>/</button>
+            <button id='buttonPlus' class='operation-button'>+</button>
+            <button id='buttonMinus' class='operation-button'>-</button>
+            <button id='buttonMultiply' class='operation-button'>*</button>
+            <button id='buttonDivide' class='operation-button'>/</button>
         </div>
         <div class='inputs-block'>
-            <div class='input-block'>
+            <div>
+                <button id='clearer'>C</button>
+            </div>
+            <div class='digits'>
+                <div>
+                    <button id='one' class='digit-button'>1</button>
+                    <button id='two' class='digit-button'>2</button>
+                    <button id='three' class='digit-button'>3</button>
+                </div>
+                <div>
+                    <button id='four' class='digit-button'>4</button>
+                    <button id='five' class='digit-button'>5</button>
+                    <button id='six' class='digit-button'>6</button>
+                </div>
+                <div>
+                    <button id='seven' class='digit-button'>7</button>
+                    <button id='eight' class='digit-button'>8</button>
+                    <button id='nine' class='digit-button'>9</button>
+                </div>
+                <div>
+                    <button id='zero' class='digit-button'>0</button>
+                    <button id='dot' class='dot-button'>.</button>
+                    <button id='equal' class='equal-button'>=</button>
+                </div>
+            </div>
+            <!-- <div class='input-block'>
                 <label>Number1</label>
                 <input id='number1' type='number' />
             </div>
             <div class='input-block'>
                 <label>Number2</label>
                 <input id='number2' type='number' />
-            </div>
+            </div> -->
             <div class='output-block'>
-                <label>Result</label>
-                <output id='result-field' type='number' ></output>
+                <output id='result-field' type='number'></output>
+                <output id='true-result' type='number'></output>
             </div>
         </div>
     </div>

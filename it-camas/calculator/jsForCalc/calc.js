@@ -1,35 +1,65 @@
-let buttonPlus = document.getElementById('buttonPlus');
-let buttonMinus = document.getElementById('buttonMinus');
-let buttonMultiply = document.getElementById('buttonMultiply');
-let buttonDivide = document.getElementById('buttonDivide');
+let operationButtons = document.getElementsByClassName('operation-button')
+let digitButtons = document.getElementsByClassName('digit-button');
+let equalSign = document.getElementById('equal');
+let clearSign = document.getElementById('clearer');
+let result = document.getElementById("result-field");
+let trueResult = document.getElementById('true-result')
 
-let input1 = document.getElementById('number1');
-let input2 = document.getElementById('number2');
-
-const onButtonClick = (eventObject) => {
-    debugger;
+const onOperationButtonClick = (eventObject) => {
     let clickedElement = eventObject.currentTarget;
-    let operationSign = clickedElement.innerHTML;
-
-    let number1 = Number(input1.value);
-    let number2 = Number(input2.value);
-    let result = document.getElementById("result-field")
-
-    if (operationSign == buttonPlus.innerHTML) {
-        result.value = number1 + number2;
-    }
-    else if (operationSign == buttonMinus.innerHTML) {
-        result.value = number1 - number2;
-    }
-    else if (operationSign == buttonMultiply.innerHTML) {
-        result.value = number1 * number2;
-    }
-    else if (operationSign == buttonDivide.innerHTML) {
-        result.value = number1 / number2;
-    }
+    operationSign = clickedElement.innerHTML;
+    result.innerHTML += operationSign;
+    return operationSign;
 }
 
-buttonPlus.addEventListener('click', onButtonClick);
-buttonMinus.addEventListener('click', onButtonClick);
-buttonMultiply.addEventListener('click', onButtonClick);
-buttonDivide.addEventListener('click', onButtonClick);
+var number1, number2, operationSign;
+const onDigitClick = (eventObject) => {
+    let clickedElement = eventObject.currentTarget;
+    let Digit = clickedElement.innerHTML;
+    let secondDigit = clickedElement.innerHTML;
+    if (number1 == undefined) {
+        number1 = Number(Digit);
+        result.innerHTML += Digit;
+    } else {
+        number2 = Number(secondDigit)
+        result.innerHTML += secondDigit;
+    }
+    return number1, number2;
+}
+
+const onEqualSignClick = () => {
+    if (operationSign == operationButtons[0].innerHTML) {
+        trueResult.value = number1 + number2;
+    }
+    else if (operationSign == operationButtons[1].innerHTML) {
+        trueResult.value = number1 - number2;
+    }
+    else if (operationSign == operationButtons[2].innerHTML) {
+        trueResult.value = number1 * number2;
+    }
+    else if (operationSign == operationButtons[3].innerHTML) {
+        trueResult.value = number1 / number2;
+    };
+
+}
+
+
+for (var i = 0; i < operationButtons.length; i++) {
+    operationButtons[i].addEventListener('click', onOperationButtonClick);
+}
+
+for (var k = 0; k < digitButtons.length; k++) {
+    digitButtons[k].addEventListener('click', onDigitClick);
+}
+
+equalSign.addEventListener('click', onEqualSignClick);
+
+const onClearSignClick = () => {
+    trueResult.value = '';
+    result.innerHTML = '';
+    number1 = undefined;
+    number2 = undefined;
+    operationSign = undefined
+
+}
+clearSign.addEventListener('click', onClearSignClick);
