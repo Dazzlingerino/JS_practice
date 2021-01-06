@@ -10,6 +10,17 @@
   grid-column-gap: 30px;
 }
 
+#slider2 {
+  position: relative;
+  top: 400px;
+  width: 30px;
+  height: 120px;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 30px;
+}
 .itk-slider .slide-img {
   display: grid;
   width: 640px;
