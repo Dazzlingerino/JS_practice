@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Canvas
+	</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="800" ></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "green";
+        
+        ctx.beginPath();
+        ctx.arc(50,50,15,0, Math.PI*3/2, false);    // from 0 to 3pi/2 clockwise
+        // ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(100,50,15,0, Math.PI, false);   // from 0 to pi clockwise
+        // ctx.stroke();
+
+        function circle(x,y,radius){
+            ctx.beginPath();
+            ctx.arc(x,y,radius, 0, Math.PI * 2, false);
+            ctx.stroke();
+        }
+        ctx.lineWidth = 5.5;
+        ctx.strokeStyle = 'red';
+        circle(100,100,10)
+        ctx.strokeStyle = 'orange';
+        circle(100,100,20)
+        ctx.strokeStyle = 'yellow';
+        circle(100,100,30)
+        ctx.strokeStyle = 'green';
+        circle(100,100,40)
+        ctx.strokeStyle = '#0bff';
+        circle(100,100,50)
+        ctx.strokeStyle = 'blue';
+        circle(100,100,60)
+        ctx.strokeStyle = 'purple';
+        circle(100,100,70)
+        var i = -5;
+        ctx.strokeStyle = 'black';
+        while (i<75){
+        circle(100,100,i+=10);
+        };
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Canvas
+	</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="800" ></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillRect(20+10,0,50,50);     // head
+        ctx.fillRect(10+15,60,60,110);   // body
+        ctx.fillRect(40+10,30,10,30);    // neck
+        ctx.fillRect(0,60,112,10);       // arms
+        ctx.fillStyle = "white";
+        ctx.fillRect(20+15,120,40,50);   // gap between legs
+        
+        // drawing flag of Ukraine 
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50,200,100,20);
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(50,220,100,20);
+
+        // drawing dude for Viselitsa
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = "#000";
+		ctx.beginPath();
+		ctx.arc(40,305,15,0, Math.PI*2, false);
+		ctx.stroke();      //head
+        ctx.beginPath();
+        ctx.moveTo(40,320);
+        ctx.lineTo(40,345);       //body
+         ctx.moveTo(40,345);
+        ctx.lineTo(25,370);       // left leg
+         ctx.moveTo(40,345);
+        ctx.lineTo(55,370);       // right leg
+         ctx.moveTo(40,330);
+        ctx.lineTo(55,325);      // right arm
+         ctx.moveTo(40,330); 
+        ctx.lineTo(25,325);      // left arm
+        ctx.stroke();
+    </script>
+</body>
+</html>
