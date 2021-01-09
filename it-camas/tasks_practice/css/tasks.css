@@ -1,0 +1,16 @@
+.widget {
+  position: relative;
+  width: 1000px;
+  padding: 20px;
+  padding-right: 80px;
+  margin: 10 auto;
+  border: 1px solid black;
+}
+
+.stars img {
+  width: 20px;
+}
+
+.stars img.active {
+  background-color: gold;
+}
