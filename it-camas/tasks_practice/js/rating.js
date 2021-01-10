@@ -36,11 +36,12 @@ function bindClickListener(stars) {
 
 function restorePreviousValue(stars) {
     let savedValue = localStorage.getItem('rating-value');
+    savedValue = + savedValue;
     if (!!savedValue) {
         for (let i = 0; i < stars.length; i++) {
             let star = stars[i];
             star.classList.add('active');
-            if (i === Number(savedValue)) {
+            if (i === savedValue) {
                 break;
 
             }

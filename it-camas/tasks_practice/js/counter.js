@@ -1,16 +1,15 @@
 let counterWidgetEl = findMainElements('.js-counter');
 let counterValueEl = findMainElements('.js-counter-value');
-bindClickListener(counterWidgetEl);
+bindClickListener(counterWidgetEl, counterValueEl);
 restorePreviousValue();
 
 
 function findMainElements(className) {
-    var widgetEl = document.querySelector(className);
-    return widgetEl;
+    return document.querySelector(className);
 };
 
-function bindClickListener(counter) {
-    counter.addEventListener('click', () => {
+function bindClickListener(counterWidgetEl, counterValueEl) {
+    counterWidgetEl.addEventListener('click', () => {
         //increment counter and display new value
         var currentValue = counterValueEl.innerHTML;
         currentValue++;
@@ -18,7 +17,7 @@ function bindClickListener(counter) {
         //save to local storage
         localStorage.setItem('counter_value', currentValue)
         counterValueEl.innerHTML = currentValue;
-        return counterValueEl;
+
     });
 };
 

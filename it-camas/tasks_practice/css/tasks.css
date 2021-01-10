@@ -14,3 +14,7 @@
 .stars img.active {
   background-color: gold;
 }
+
+.gallery img {
+  width: 150px;
+}
